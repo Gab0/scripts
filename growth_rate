@@ -1,0 +1,17 @@
+#!/bin/python
+import sys
+import PyPDF2
+import datetime
+
+
+def count_pdf_pages(filepath):
+    with open(filepath, 'rb') as f:
+        pdf = PyPDF2.PdfFileReader(f)
+        return pdf.numPages
+
+
+if __name__ == "__main__":
+    N = count_pdf_pages(sys.argv[1])
+    with open("n_page_log", 'a') as f:
+        dt = datetime.datetime.now().strftime("%H:%M - %d/%m/%y")
+        f.write(f"[{dt}] {N}\n")

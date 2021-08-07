@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z ${1} ];then
+  MESSAGE='.'
+else
+  MESSAGE=$1
+fi
+git commit -a -m $MESSAGE
+git push

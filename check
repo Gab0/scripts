@@ -1,0 +1,5 @@
+#!/bin/sh
+
+grep -rn "\[@\]" --color=always .
+grep -rn "FIXME" --color=always .
+
